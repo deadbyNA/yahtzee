@@ -1,17 +1,27 @@
 import tkinter as tk
 import sys
+import random
 
 from PIL import ImageTk, Image
 def quit():
     sys.exit()
+
+
+
+
 #Window details
 window = tk.Tk()
 window.geometry('1080x1920')
 window.title('Yahtzee Baby!')
 #Window details
 
+def randice():
+    randposition = [die_spot_1, die_spot_2, die_spot_3, die_spot_4, die_spot_5]
+    print(random.randint(1,6))
+#    rollBtn.config(state="disabled")
+
 #roll
-rollBtn = tk.Button(text='Roll', padx=30, pady=15, font=('change later',20) )
+rollBtn = tk.Button(text='Roll', padx=30, pady=15, font=('change later',20), command=randice )
 rollBtn.place(x=940, y=1760)
 #roll
 
@@ -54,6 +64,8 @@ die_spot_3 = tk.Label(image=die3_image).grid(row=1, column=2,padx=25, pady=10)
 die_spot_4 = tk.Label(image=die4_image).grid(row=1, column=3,padx=25, pady=10)
 die_spot_5 = tk.Label(image=die5_image).grid(row=1, column=4,padx=25, pady=10)
 #creates image of dice and location
+
+
 
 line = tk.Label(text='______________________________________________________', pady=10).grid(row=3, column=0, columnspan=5)
 
