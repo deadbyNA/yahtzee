@@ -2,6 +2,8 @@ class Scoreboard:
     '''yahtzee scoreboard'''
     def __init__(self):
         self.score = 0
+        self.top_score=0
+        self.bottom_score =0
         self.aces_used = False
         self.twos_used = False
         self.threes_used = False
@@ -24,6 +26,7 @@ class Scoreboard:
 
         self.aces_used = True   
         self.score += score
+        self.top_score += score
         return score
     def score_twos(self,dice:list):
         score = 0
